@@ -1,0 +1,29 @@
+PROCEDURE prod_scal(var ps,vect1,vect2)
+VAR
+    Produit_scalaire=0 INTEGER;
+    i:INTEGER;
+BEGIN
+    
+FOR i FROM 0 TO 1 STEP 1 DO
+    Produit_scalaire:=Produit_scalaire+(vect1[i]*vect2[i]);
+END_FOR
+    IF (Produit_scalaire=0) THEN
+        Write("les vecteurs sont hortogono");
+    ELSE
+        Write("les vecteurs ne sont pas hortogono");
+    END_IF
+END
+ALGORITHM Produit_scalaire
+VAR
+    vect1: INTEGER[];
+    vect2: INTEGER[];
+    ps,i:INTEGER;
+BEGIN
+FOR i FROM 0 TO 1 STEP 1  DO
+    Write("donner les cordonneés de premier vecteur ");
+    Read(vect1[i]);
+    Write("donner les cordonneés de deuxieme vecteur ");
+    Read(vect2[i]);
+    END_FOR
+    prod_scal(ps);
+    END
